@@ -1,0 +1,90 @@
+<div class="outer">
+    <div class="container">
+        <div class="row d-flex flex-row ">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-md-4 offset-md-3 ">
+                <div class="panel border bg-white ">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weigth-bold text-center">{{Heading}}</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form>
+                            <div class="form-group pt-3">
+                                <div>
+                                    <input type="text" name="BrandName" placeholder="BrandName"
+                                        [(ngModel)]="CarObj.brandName">
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <div>
+
+                                    <input type="text" name="model" placeholder="model" [(ngModel)]="CarObj.model">
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <div>
+                                    <input type="number" name="year" placeholder="year" [(ngModel)]="CarObj.year">
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <div>
+                                    <input type="number" name="price" placeholder="price" [(ngModel)]="CarObj.price">
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group pt-3">
+                                <div class="d-flex flex-column ">
+                                    <label class="col-12" for="">New Car :</label>
+                                    <div class="d-flex flex-row col-6">
+                                        <label class="col-3" for="yes">yes </label>
+                                        <input class="col-3" type="radio" name="aa" [value]="true" placeholder="bool"
+                                            [(ngModel)]="CarObj.new">
+                                    </div>
+                                    <div class="d-flex flex-row col-6">
+                                        <label class="col-3" for="no">no </label>
+                                        <input class="col-3" type="radio" name="aa" [value]="false" placeholder="bool"
+                                            [(ngModel)]="CarObj.new">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <div>
+                                    <input type="file" name="imageUrl"  (change)="handleInputChange($event)"
+                                        placeholder="imageUrl">
+                                </div>
+                                <br> <img src="{{CarObj.imageUrl}}"  alt="mobile">
+
+                            </div>
+
+                            <div *ngIf="isShowUpdate">
+                                <button (click)=UpdateData() type="submit"
+                                    class="btn btn-primary btn-block mt-4 w-100">Update</button>
+                            </div>
+
+                            <div *ngIf="isShowSave == true">
+                                <button (click)="saveData()" type="submit"
+                                    class="btn btn-primary btn-block mt-4 w-100">Save</button>
+                            </div>
+
+
+                            <button (click)="cancel()" type="submit"
+                                class="btn btn-primary btn-block mt-4 w-100">cancel</button>
+
+
+
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
